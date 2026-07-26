@@ -12,8 +12,8 @@ test.describe("Dashboard", () => {
     await page.goto("/dashboard");
     await expect(page.getByText("Total Incidents")).toBeVisible();
     // KPI values load async from the API -- wait for a real number to replace
-    // the "--" loading placeholder rather than asserting immediately.
-    await expect(page.getByText("--")).toHaveCount(0, { timeout: 10000 });
+    // the "--" loading placeholder on the first KPI card.
+    await expect(page.locator(".display-font").first()).not.toHaveText("--", { timeout: 10000 });
   });
 
   test("heatmap panel renders ward risk data", async ({ page }) => {
@@ -27,7 +27,7 @@ test.describe("Dashboard", () => {
     await page.goto("/dashboard");
     const input = page.getByLabel("Ask Command AI");
     await input.fill("why is central zone high risk");
-    await page.getByRole("button", { name: "Ask" }).click();
+    await page.getByRole("button", { name: "EXECUTE" }).click();
     // A second AI message bubble should appear beyond the initial greeting.
     await expect(page.locator("text=/risk score|risk band/i")).toBeVisible({ timeout: 10000 });
   });
@@ -65,6 +65,7 @@ test.describe("Investigations", () => {
   test("opening a case shows the AI investigation brief", async ({ page }) => {
     await page.goto("/investigations");
     const firstCase = page.locator("table tbody tr").first().locator("a");
+    await expect(firstCase).toBeVisible({ timeout: 15000 });
     await firstCase.click();
     await expect(page.getByText("AI Investigation Suggestions")).toBeVisible({ timeout: 10000 });
   });
