@@ -1,6 +1,7 @@
 FROM node:20-slim AS builder
 WORKDIR /app
 COPY package.json ./
+ENV PUPPETEER_SKIP_DOWNLOAD=true
 RUN npm install
 COPY . .
 ARG NEXT_PUBLIC_API_BASE=http://localhost:8000
