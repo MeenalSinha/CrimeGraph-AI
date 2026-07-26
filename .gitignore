@@ -1,0 +1,30 @@
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+backend/vendor/
+*.egg-info/
+
+# Generated data & model artifacts removed from gitignore so they can be bundled
+
+# Node / Next.js
+node_modules/
+frontend/.next/
+frontend/out/
+
+# Test artifacts
+frontend/playwright-report/
+frontend/test-results/
+frontend/coverage/
+
+# Mobile (Expo)
+mobile/.expo/
+mobile/dist/
+mobile/web-build/
+
+# Env
+.env
+
+# OS
+.DS_Store

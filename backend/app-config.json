@@ -1,0 +1,7 @@
+{
+  "build": "echo \"Skipping pip build\"",
+  "command": "python3 start.py",
+  "build_path": ".",
+  "stack": "python_3_11",
+  "memory": 1024
+}

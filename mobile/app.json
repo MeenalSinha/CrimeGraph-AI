@@ -1,0 +1,35 @@
+{
+  "expo": {
+    "name": "CrimeGraph AI",
+    "slug": "crimegraph-ai-mobile",
+    "version": "0.1.0",
+    "orientation": "portrait",
+    "icon": "./assets/icon.png",
+    "userInterfaceStyle": "dark",
+    "scheme": "crimegraph",
+    "splash": {
+      "image": "./assets/splash.png",
+      "backgroundColor": "#050B18"
+    },
+    "assetBundlePatterns": ["**/*"],
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "ai.crimegraph.mobile"
+    },
+    "android": {
+      "package": "ai.crimegraph.mobile",
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/adaptive-icon.png",
+        "backgroundColor": "#050B18"
+      }
+    },
+    "web": {
+      "bundler": "metro",
+      "output": "static"
+    },
+    "plugins": ["expo-router"],
+    "extra": {
+      "apiBase": "http://localhost:8000"
+    }
+  }
+}

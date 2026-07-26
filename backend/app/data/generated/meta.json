@@ -1,0 +1,26 @@
+{
+  "city": "Novagarh",
+  "generated_at": "2026-07-26T17:51:58.907777",
+  "seed": 42,
+  "counts": {
+    "stations": 8,
+    "persons": 600,
+    "vehicles": 420,
+    "phones": 760,
+    "accounts": 360,
+    "firs": 6000,
+    "calls": 4800,
+    "transfers": 1200,
+    "associations": 574
+  },
+  "wards": [
+    "North District",
+    "Central Zone",
+    "West Sector",
+    "South Division",
+    "East Ward",
+    "Old City",
+    "Riverside",
+    "Industrial Belt"
+  ]
+}

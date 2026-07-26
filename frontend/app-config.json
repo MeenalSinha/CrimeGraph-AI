@@ -1,0 +1,10 @@
+{
+  "build": "npm install && npm run build",
+  "command": "node server.js",
+  "build_path": ".",
+  "stack": "node18",
+  "memory": 512,
+  "env_variables": {
+    "NEXT_PUBLIC_API_BASE": "https://crimegraph-api-50044362495.development.catalystappsail.in"
+  }
+}

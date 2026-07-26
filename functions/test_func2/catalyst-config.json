@@ -1,0 +1,11 @@
+{
+	"deployment": {
+		"name": "test_func2",
+		"stack": "python_3_11",
+		"type": "advancedio",
+		"env_variables": {}
+	},
+	"execution": {
+		"main": "main.py"
+	}
+}

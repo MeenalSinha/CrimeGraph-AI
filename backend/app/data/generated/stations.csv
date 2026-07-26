@@ -1,0 +1,9 @@
+station_id,name,ward,lat,lng,officer_count,vehicle_count
+PS-001,North District Police Station,North District,26.921115414387664,75.81620008604177,35,6
+PS-002,Central Zone Police Station,Central Zone,26.897785685905188,75.80189176971331,52,4
+PS-003,West Sector Police Station,West Sector,26.895723940099593,75.77125426143586,23,6
+PS-004,South Division Police Station,South Division,26.867861287147125,75.79081614983241,53,6
+PS-005,East Ward Police Station,East Ward,26.90672815690338,75.83161059978872,44,6
+PS-006,Old City Police Station,Old City,26.91459367237027,75.80322552566585,18,5
+PS-007,Riverside Police Station,Riverside,26.881585115159904,75.80872200413215,27,6
+PS-008,Industrial Belt Police Station,Industrial Belt,26.863657704577655,75.76869275636089,23,9

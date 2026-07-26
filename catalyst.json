@@ -1,0 +1,45 @@
+{
+  "project": "crimegraph-ai",
+  "appsail": [
+    {
+      "name": "crimegraph-api",
+      "source": "backend",
+      "type": "python_3_11",
+      "memory": 1024,
+      "ignore": [
+        ".venv",
+        "venv",
+        "venv311",
+        "__pycache__",
+        "__pypackages__",
+        "tests",
+        "scripts"
+      ]
+    },
+    {
+      "name": "crimegraph-ui",
+      "source": "frontend/.next/standalone",
+      "type": "node18",
+      "memory": 512
+    }
+  ],
+  "functions": {
+    "targets": [
+      {
+        "name": "retrain_job",
+        "source": "functions/retrain_job",
+        "type": "advanced_io",
+        "runtime": "python3.11",
+        "memory": 1024,
+        "timeout": 540,
+        "entry_point": "index.handler",
+        "cron": {
+          "schedule": "0 20 * * *",
+          "description": "Nightly ML model retraining — runs at 2:00 AM IST (8:30 PM UTC)"
+        }
+      }
+    ],
+    "ignore": ["__pycache__", ".venv", "venv"],
+    "source": "functions"
+  }
+}

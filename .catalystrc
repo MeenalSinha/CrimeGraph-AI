@@ -1,0 +1,30 @@
+{
+  "defaults": {
+    "project": 1,
+    "env": 1
+  },
+  "actives": {
+    "project": 1,
+    "env": 1
+  },
+  "projects": [
+    {
+      "idx": 1,
+      "id": "48428000000017001",
+      "name": "CrimeGraph-AI",
+      "domain": {
+        "id": "50044362495",
+        "name": "crimegraph-ai-60079412095.development"
+      },
+      "timezone": "Asia/Kolkata",
+      "env": [
+        {
+          "idx": 1,
+          "id": "60079412095",
+          "name": "Development",
+          "type": 3
+        }
+      ]
+    }
+  ]
+}
