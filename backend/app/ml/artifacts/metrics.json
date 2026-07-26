@@ -1,59 +1,59 @@
 {
   "count_model": {
-    "mae": 0.063,
-    "r2": -0.208,
+    "mae": 1.184,
+    "r2": 0.528,
     "cross_validation": {
       "method": "KFold(n_splits=5)",
-      "r2_mean": -0.266,
-      "r2_std": 0.277
+      "r2_mean": 0.52,
+      "r2_std": 0.03
     },
     "tuned_hyperparameters": {
-      "subsample": 0.9,
+      "subsample": 0.7,
       "n_estimators": 150,
-      "max_depth": 3,
+      "max_depth": 4,
       "learning_rate": 0.03
     },
     "tuning_method": "RandomizedSearchCV(n_iter=8, cv=3, scoring=r2)"
   },
   "severity_model": {
-    "mae": 1.013
+    "mae": 0.691
   },
   "type_model": {
-    "accuracy": 0.125,
-    "precision_macro": 0.15,
-    "recall_macro": 0.181,
-    "f1_macro": 0.161,
-    "roc_auc_ovr_macro": 0.489,
+    "accuracy": 0.212,
+    "precision_macro": 0.148,
+    "recall_macro": 0.139,
+    "f1_macro": 0.13,
+    "roc_auc_ovr_macro": 0.545,
     "cross_validation": {
       "method": "StratifiedKFold(n_splits=5)",
-      "f1_macro_mean": 0.09,
-      "f1_macro_std": 0.035,
-      "accuracy_mean": 0.135,
-      "accuracy_std": 0.049
+      "f1_macro_mean": 0.124,
+      "f1_macro_std": 0.007,
+      "accuracy_mean": 0.205,
+      "accuracy_std": 0.004
     },
     "tuned_hyperparameters": {
-      "subsample": 1.0,
-      "n_estimators": 300,
-      "max_depth": 3,
-      "learning_rate": 0.05
+      "subsample": 0.8,
+      "n_estimators": 100,
+      "max_depth": 4,
+      "learning_rate": 0.1
     },
     "tuning_method": "RandomizedSearchCV(n_iter=8, cv=3, scoring=f1_macro)"
   },
   "anomaly_model": {
     "algorithm": "IsolationForest",
     "contamination": 0.05,
-    "ward_days_evaluated": 128,
-    "ward_days_flagged": 7
+    "ward_days_evaluated": 242,
+    "ward_days_flagged": 12
   },
-  "trained_on_rows": 200,
+  "trained_on_rows": 6000,
   "feature_importances": {
-    "ward_enc": 0.0383,
-    "hour_bucket": 0.3821,
-    "weekday": 0.2367,
-    "is_night": 0.016,
-    "is_weekend": 0.0686,
-    "is_festival_day": 0.0,
-    "weather_enc": 0.0583,
-    "population_density": 0.2
+    "ward_enc": 0.0675,
+    "hour_bucket": 0.2059,
+    "weekday": 0.0919,
+    "is_night": 0.034,
+    "is_weekend": 0.0202,
+    "is_festival_day": 0.0714,
+    "weather_enc": 0.4166,
+    "population_density": 0.0924
   }
 }

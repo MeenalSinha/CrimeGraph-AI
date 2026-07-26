@@ -74,6 +74,15 @@ def test_patrol_optimizer_returns_routes():
     assert len(plan["routes"]) == plan["total_units"]
 
 
+import pytest
+
+try:
+    from ortools.constraint_solver import pywrapcp
+    HAS_ORTOOLS = True
+except ImportError:
+    HAS_ORTOOLS = False
+
+@pytest.mark.skipif(not HAS_ORTOOLS, reason="OR-Tools is not installed")
 def test_ortools_patrol_optimizer_solves_and_covers_all_wards():
     """Real OR-Tools VRP solve -- verifies the solver actually returns a
     feasible solution covering all wards for the default demo city size
