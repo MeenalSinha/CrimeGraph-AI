@@ -36,7 +36,7 @@ describe("CommandConsole", () => {
 
     const input = screen.getByLabelText("Ask Command AI");
     await user.type(input, "why is central zone high risk");
-    await user.click(screen.getByRole("button", { name: "Ask" }));
+    await user.click(screen.getByRole("button", { name: "EXECUTE" }));
 
     await waitFor(() => {
       expect(api.chat).toHaveBeenCalledWith("why is central zone high risk");
@@ -49,7 +49,8 @@ describe("CommandConsole", () => {
   it("does not send an empty query", async () => {
     const user = userEvent.setup();
     render(<CommandConsole />);
-    await user.click(screen.getByRole("button", { name: "Ask" }));
+    await waitFor(() => expect(api.networkStats).toHaveBeenCalled());
+    await user.click(screen.getByRole("button", { name: "EXECUTE" }));
     expect(api.chat).not.toHaveBeenCalled();
   });
 
@@ -57,6 +58,6 @@ describe("CommandConsole", () => {
     render(<CommandConsole />);
     await waitFor(() => expect(api.networkStats).toHaveBeenCalled());
     expect(screen.queryByLabelText(/voice input/i)).not.toBeInTheDocument();
-    expect(screen.getByText(/isn't supported in this browser/i)).toBeInTheDocument();
+    expect(screen.getByText(/VOICE INPUT\/OUTPUT UNAVAILABLE\./i)).toBeInTheDocument();
   });
 });
