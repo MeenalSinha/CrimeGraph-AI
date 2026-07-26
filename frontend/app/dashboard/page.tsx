@@ -67,7 +67,7 @@ export default function DashboardPage() {
             </div>
 
             <footer className="flex items-center justify-between text-[10px] text-blue/60 px-2 pt-2 border-t border-line/50 mt-2">
-              <span className="data-mono">CRIMEGRAPH AI v2.0.1 -- BUILD {new Date().toISOString().slice(0, 10)}</span>
+              <span className="data-mono" suppressHydrationWarning>CRIMEGRAPH AI v2.0.1 -- BUILD {new Date().toISOString().slice(0, 10)}</span>
               <span className="tracking-[0.3em] font-semibold text-blue">INTELLIGENCE DRIVEN. SAFER TOMORROW.</span>
               <span className="flex items-center gap-1.5">
                 SECURE SYSTEM <LockIcon /> 
