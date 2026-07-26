@@ -136,7 +136,9 @@ def train():
     Xt = type_df[["ward_enc", "hour", "weekday", "is_night", "is_weekend",
                    "is_festival_day", "weather_enc", "population_density"]]
     yt = type_df["crime_type_enc"]
-    Xt_train, Xt_test, yt_train, yt_test = train_test_split(Xt, yt, test_size=0.2, random_state=42, stratify=yt)
+    min_class_count = yt.value_counts().min()
+    stratify_col = yt if min_class_count >= 2 else None
+    Xt_train, Xt_test, yt_train, yt_test = train_test_split(Xt, yt, test_size=0.2, random_state=42, stratify=stratify_col)
 
     param_distributions = {
         "n_estimators": [100, 150, 200, 300],
@@ -171,7 +173,7 @@ def train():
     # hyperparameters, reported as mean +/- std -- a single train/test split's
     # F1 score can be a lucky or unlucky draw; this is the honest, more
     # robust number.
-    cv = StratifiedKFold(n_splits=5, shuffle=True, random_state=42)
+    cv = StratifiedKFold(n_splits=5, shuffle=True, random_state=42) if min_class_count >= 5 else KFold(n_splits=5, shuffle=True, random_state=42)
     cv_f1_scores = cross_val_score(type_model, Xt, yt, cv=cv, scoring="f1_macro", n_jobs=-1)
     cv_acc_scores = cross_val_score(type_model, Xt, yt, cv=cv, scoring="accuracy", n_jobs=-1)
 

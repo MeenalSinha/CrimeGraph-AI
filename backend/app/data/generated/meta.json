@@ -1,17 +1,17 @@
 {
   "city": "Novagarh",
-  "generated_at": "2026-07-26T17:51:58.907777",
+  "generated_at": "2026-07-26T23:38:53.108572",
   "seed": 42,
   "counts": {
     "stations": 8,
-    "persons": 600,
-    "vehicles": 420,
-    "phones": 760,
-    "accounts": 360,
-    "firs": 6000,
-    "calls": 4800,
-    "transfers": 1200,
-    "associations": 574
+    "persons": 50,
+    "vehicles": 35,
+    "phones": 63,
+    "accounts": 30,
+    "firs": 200,
+    "calls": 400,
+    "transfers": 100,
+    "associations": 100
   },
   "wards": [
     "North District",
