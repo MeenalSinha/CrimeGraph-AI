@@ -18,7 +18,7 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent.parent))
 
 import pandas as pd
-from sqlalchemy import text
+from sqlalchemy import select, func
 
 from app.core.config import DATA_DIR
 from app.data.db_models import (
@@ -102,7 +102,7 @@ def seed(database_url: str):
 
         counts = {}
         for table in Base.metadata.sorted_tables:
-            n = session.execute(text(f"SELECT COUNT(*) FROM {table.name}")).scalar()
+            n = session.execute(select(func.count()).select_from(table)).scalar()
             counts[table.name] = n
         return counts
     finally:
