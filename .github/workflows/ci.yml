@@ -52,6 +52,9 @@ jobs:
         run: bandit -r app -ll -f txt
 
       - name: Generate synthetic data + train model
+        env:
+          CRIMEGRAPH_N_PERSONS: 600
+          CRIMEGRAPH_N_FIRS: 6000
         run: |
           python -m app.data.synthetic_generator
           python -m app.ml.train_risk_model
