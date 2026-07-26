@@ -20,11 +20,11 @@ export default function DashboardPage() {
   }, []);
 
   return (
-    <div className="flex flex-col h-screen sci-fi-border bg-panel2 overflow-hidden">
-        <Topbar title="Command Center" />
+    <div className="flex h-screen sci-fi-border bg-panel2 overflow-hidden">
+        <Sidebar />
         
-        <div className="flex flex-1 min-h-0">
-          <Sidebar />
+        <div className="flex flex-col flex-1 min-w-0">
+          <Topbar title="Command Center" />
           <main className="flex-1 p-4 lg:p-6 flex flex-col gap-5 overflow-y-auto relative">
             
             <div className="flex flex-wrap gap-4">
